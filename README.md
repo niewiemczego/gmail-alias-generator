@@ -32,7 +32,7 @@ Follow these steps to get the application running locally.
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/niewiemczego/gmail-alias-generator/
+    git clone https://github.com/niewiemczego/gmail-alias-generator.git
     cd gmail-alias-generator
     ```
 
