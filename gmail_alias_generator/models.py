@@ -14,5 +14,5 @@ class AliasBase(BaseModel):
     )
     aliases_per_page: Literal[128, 256, 512, 1024, 2048, 4096] = Field(
         default=128,
-        description=f"Liczba aliasów na stronę. Dozwolone wartości: {ALLOWED_ALIASES_VALUES}",
+        description=f"Allowed number of aliases: {ALLOWED_ALIASES_VALUES}",
     )
