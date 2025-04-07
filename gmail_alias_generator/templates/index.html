@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Alias Generator</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <div class="header">
+        <span style="font-weight: bold;">Email Generator</span>
+    </div>
+
+    <div class="container">
+        <h1>Gmail Generator</h1>
+
+        <p>Generate many new mailboxes from your Gmail email. Email generator can quickly create multiple aliases for
+            your Gmail. All the boxes will redirect the letters to your main mailbox. So having one account, you can
+            automatically have many other mail accounts to Google.</p>
+
+        <p>Useful links: <a href="https://support.google.com/mail/answer/7436150" target="_blank">Dots don't matter in
+                Gmail
+                addresses</a> and <a
+                href="https://gmail.googleblog.com/2008/03/2-hidden-ways-to-get-more-from-your.html"
+                target="_blank">Official Gmail
+                Blog</a>.
+        </p>
+
+        <div class="form-row">
+            <label>Gmail aliases per page:</label>
+            <select id="aliasesPerPage">
+                <option value="128" {% if aliases_per_page==128 %}selected{% endif %}>128</option>
+                <option value="256" {% if aliases_per_page==256 %}selected{% endif %}>256</option>
+                <option value="512" {% if aliases_per_page==512 %}selected{% endif %}>512</option>
+                <option value="1024" {% if aliases_per_page==1024 %}selected{% endif %}>1024</option>
+                <option value="2048" {% if aliases_per_page==2048 %}selected{% endif %}>2048</option>
+                <option value="4096" {% if aliases_per_page==4096 %}selected{% endif %}>4096</option>
+            </select>
+        </div>
+
+        <div class="form-row">
+            <input type="text" class="email-input" placeholder="Enter your Gmail address" value="generator@gmail.com"
+                id="emailInput">
+            <button class="generate-btn" id="generateButton">Generate</button>
+        </div>
+
+        <div class="results">
+            <div class="result-item">
+                <label>
+                    <input type="checkbox" id="dotTrick" name="generation_options" value="dot" {% if dot_method
+                        %}checked{% endif %}>
+                    "." Gmail dot trick
+                </label>
+            </div>
+            <div class="result-item">
+                <label>
+                    <input type="checkbox" id="plusTrick" name="generation_options" value="plus" disabled>
+                    "+" Gmail plus trick (SOON)
+                </label>
+            </div>
+        </div>
+
+        <div id="aliasesInfoText"></div>
+
+        <div id="outputArea"></div>
+
+        <div id="copyButtonContainer">
+            <button id="copyAllButton" disabled>Copy All</button>
+        </div>
+
+        <div class="pagination" id="paginationControls"></div>
+    </div>
+
+    <script src="/static/main.js"></script>
+</body>
+
+</html>

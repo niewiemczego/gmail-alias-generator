@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.5;
+}
+
+.header {
+    background-color: #4285F4;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+p {
+    margin-bottom: 15px;
+    color: #666;
+}
+
+.form-row {
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+label {
+    margin-right: 10px;
+}
+
+select,
+input[type="number"] {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-right: 15px;
+}
+
+#aliasesInfoText {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+#outputArea {
+    margin-top: 20px;
+    border: 1px solid #eee;
+    padding: 15px;
+    min-height: 100px;
+    background-color: #fdfdfd;
+    font-family: monospace;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.email-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    min-width: 200px;
+}
+
+.generate-btn {
+    background-color: #34A853;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.generate-btn:hover {
+    background-color: #2d9249;
+}
+
+.result-item {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+}
+
+.check-icon {
+    color: #34A853;
+    margin-right: 10px;
+}
+
+.pagination {
+    display: flex;
+    margin-top: 15px;
+}
+
+.page-item {
+    width: 60px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.page-item.active {
+    background-color: #4285F4;
+    color: white;
+}
+
+a {
+    color: #4285F4;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#copyButtonContainer {
+    margin-top: 10px;
+    text-align: right;
+}
+
+#copyAllButton {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+#copyAllButton:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
