@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
 
                 if (displayedAliases.length > 0) {
-                    outputArea.innerHTML = displayedAliases.join('<br>');
+                    outputArea.innerHTML = displayedAliases.join('@gmail.com <br>');
                     copyAllButton.disabled = false;
                 } else {
                     outputArea.textContent = (currentRequestData.use_dot || currentRequestData.use_plus) ? 'No aliases found for this page or criteria' : '';
