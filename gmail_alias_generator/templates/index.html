@@ -56,8 +56,9 @@
             </div>
             <div class="result-item">
                 <label>
-                    <input type="checkbox" id="plusTrick" name="generation_options" value="plus" disabled>
-                    "+" Gmail plus trick (SOON)
+                    <input type="checkbox" id="plusTrick" name="generation_options" value="plus" {% if plus_method
+                        %}checked{% endif %}>
+                    "+" Gmail plus trick
                 </label>
             </div>
         </div>

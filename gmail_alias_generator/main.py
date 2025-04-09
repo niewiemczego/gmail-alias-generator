@@ -3,7 +3,7 @@ from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
-from gmail_alias_generator.helpers import generate_all_aliases
+from gmail_alias_generator.helpers import generate_all_aliases, generate_dot_aliases, generate_plus_aliases
 from gmail_alias_generator.models import AliasBase
 
 TEMPLATES_PATH = "./gmail_alias_generator/templates"
@@ -36,8 +36,12 @@ async def generate_aliases(data: AliasBase):
 
     total_generated_aliases = []
 
-    if data.use_dot:
+    if data.use_dot and data.use_plus:
         total_generated_aliases.extend(generate_all_aliases(data.email))
+    elif data.use_dot:
+        total_generated_aliases.extend(generate_dot_aliases(data.email))
+    elif data.use_plus:
+        total_generated_aliases.extend(generate_plus_aliases(data.email, data.aliases_per_page))
 
     unique_aliases = sorted(set(total_generated_aliases))
     paginated_aliases = unique_aliases[(data.page - 1) * data.aliases_per_page : data.page * data.aliases_per_page]
